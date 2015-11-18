@@ -1,4 +1,3 @@
-# $GOPATH/bin/present
 Pocket Guide to Go
 19 Nov 2015
 Tags: go golang
@@ -17,7 +16,7 @@ Software Engineer - Geckoboard
 
 * Keeping it small
 
-.html java-comparison.html
+.image spec-comparison.jpg
 
 * Tools
 
@@ -34,7 +33,7 @@ Better tools lead to better software
 
 The compiler reads less code
 
-.html compiler-comparison.html
+.image compiler-comparison.jpg
 
 - No unused imports
 - No cyclical dependencies
@@ -54,7 +53,7 @@ Goroutines are simple
 - Many programmers -> small syntax and lots of tools
 - Many dependencies -> Strictly controlled
 - Slow builds -> Steamlined compiling
-- Simulaneous processes -> made simple
+- Simultaneous processes -> made simple
 Simple but effective
 
 * Resources
