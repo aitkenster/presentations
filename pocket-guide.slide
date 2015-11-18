@@ -1,0 +1,65 @@
+# $GOPATH/bin/present
+Pocket Guide to Go
+19 Nov 2015
+Tags: go golang
+
+Nicola Aitken
+Software Engineer - Geckoboard
+
+@aitkenster
+
+* Problems of Scale
+
+- Many programmers
+- Many dependencies
+- Slow builds
+- Executing processes simultaneously
+
+* Keeping it small
+
+.html java-comparison.html
+
+* Tools
+
+Better tools lead to better software
+- dependency management with go imports
+- go present
+
+* Go Fmt
+
+.link http://play.golang.org/p/tEARi2Wg_H (example)
+.image styleguide.jpg 500 _
+
+* Speeding things up
+
+The compiler reads less code
+
+.html compiler-comparison.html
+
+- No unused imports
+- No cyclical dependencies
+- Just read the top of each file
+
+* Example
+
+.code import-example.go
+
+* Multi-tasking
+Goroutines are simple
+
+.play -edit goroutine.go
+
+* Conclusion
+
+- Many programmers -> small syntax and lots of tools
+- Many dependencies -> Strictly controlled
+- Slow builds -> Steamlined compiling
+- Simulaneous processes -> made simple
+Simple but effective
+
+* Resources
+.link https://tour.golang.org/ Language tour
+.link http://play.golang.org/ Sandbox
+.link https://gobyexample.com/ Go by example
+
+
