@@ -16,7 +16,7 @@ Software Engineer - Geckoboard
 
 * Keeping it small
 
-.image spec-comparison.jpg
+.image pocket-guide/spec-comparison.jpg
 
 * Tools
 
@@ -27,13 +27,13 @@ Better tools lead to better software
 * Go Fmt
 
 .link http://play.golang.org/p/tEARi2Wg_H (example)
-.image styleguide.jpg 500 _
+.image pocket-guide/styleguide.jpg 500 _
 
 * Speeding things up
 
 The compiler reads less code
 
-.image compiler-comparison.jpg
+.image pocket-guide/compiler-comparison.jpg
 
 - No unused imports
 - No cyclical dependencies
@@ -41,12 +41,12 @@ The compiler reads less code
 
 * Example
 
-.code import-example.go
+.code pocket-guide/import-example.go
 
 * Multi-tasking
 Goroutines are simple
 
-.play -edit goroutine.go
+.play -edit pocket-guide/goroutine.go
 
 * Conclusion
 
