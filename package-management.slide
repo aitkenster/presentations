@@ -1,0 +1,116 @@
+Package Management
+15 Mar 2016
+Tags: go golang
+
+Nicola Aitken
+Software Engineer - Geckoboard
+
+@aitkenster
+
+* What is package management?
+
+  ...the process of installing, upgrading, configuring, and
+  removing computer programs for a computer's operating system
+  in a consistent manner.
+
+.link https://en.wikipedia.org/wiki/Package_manager
+
+* Language Package Managers
+
+- RubyGems
+- npm
+- go get
+
+* Go get
+
+.code package-management/get.go
+
+Downloads a specific package into the src folder
+
+  get looks for a branch or tag
+  that matches the locally installed version of Go. The most important
+  rule is that if the local installation is running version "go1", get
+  searches for a branch or tag named "go1". If no such version exists it
+  retrieves the most recent version of the package.
+
+* "It works on my machine"
+
+- Github is down
+- Source code has been deleted
+- Major new version release
+
+* ...
+.image package-management/change-is-good.jpg
+
+* We're going to need another plan
+- Same server, different versions for different programs
+- Different server, same package version
+
+* Project Dependency Manager
+
+1) Decides what the dev intends to rely on
+
+2) Transforms that into a recursive list of dependencies
+
+3) Reproduces the dependencies from that list
+
+The result:
+
+An isolated project that can be compiled and "just work"
+
+* PDM Strategies
+
+- Revision Lock-Ins
+- Internal Vendoring
+
+* Revision Lock-Ins - Glock
+
+.link https://github.com/robfig/glock
+
+Saves the required branch of the repo to a GLOCKFILE
+
+Sync revisions with other copies of the project via version control hooks
+
+* CockroachDB Glockfile
+.image package-management/cockroach-glockfile.jpg
+
+* Revision Lock-Ins (continued)
+
+Keeps project codebase small
+Still risk of packages being removed from external repos
+
+* Vendoring - The Official Solution
+
+Since Go 1.6 was released, the Go team have endorsed vendoring for package management
+
+Initially experimental, now enabled by default
+
+If there is a vendoring folder, GOPATH searches that first
+
+.image package-management/gopath-search.jpg
+
+
+Import paths do not need to be updated
+
+  import "github.com/jinzhu/now"
+
+* Vendoring tools - Godep
+
+.link https://github.com/tools/godep
+
+  godep save https://github.com/gorilla/mux
+
+Saves a copy of each dependency in project/vendor
+
+* Demo
+
+.image package-management/godep-json.jpg
+
+* Vendoring tools (continued)
+
+Other tools:
+
+- gb
+.link github.com/constabulary/gb
+- glide
+.link github.com/Masterminds/glide
